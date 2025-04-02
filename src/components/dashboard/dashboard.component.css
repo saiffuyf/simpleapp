@@ -1,11 +1,12 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Billabong&display=swap');
 
-/* Layout */
+/* General Layout */
 .dashboard {
     display: flex;
     height: 100vh;
     font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Prevents full-page scrolling */
 }
 
 /* Sidebar */
@@ -16,27 +17,27 @@
     border-right: 1px solid #ddd;
     position: fixed;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: auto; /* Sidebar stays fixed */
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Sidebar - Title */
 .sidebar h2 {
     font-size: 26px;
     margin-bottom: 20px;
-    font-family: 'Billabong', sans-serif; /* Instagram-style logo font */
+    font-family: 'Billabong', sans-serif;
     color: white;
 }
 
+/* Sidebar - List */
 .sidebar ul {
     list-style: none;
     padding: 0;
-   
 }
 
 .sidebar li {
     margin: 30px 0;
-    color: white;
 }
-
 .sidebar a {
     text-decoration: none;
     color: white;
@@ -47,9 +48,14 @@
     transition: 0.3s ease-in-out;
 }
 
+/* 🛠 Add spacing between icons and text */
+.sidebar a fa-icon {
+    margin-right: 12px; /* Adjust as needed */
+    font-size: 20px; /* Ensure icons are properly sized */
+}
+
 .sidebar a:hover, .sidebar a.active {
     font-weight: 600;
-    
 }
 
 /* Notification Badge */
@@ -62,49 +68,55 @@
     margin-left: 10px;
 }
 
-/* Main Content */
+/* Main Content (Scrollable) */
 .main-content {
-    margin-left: 270px;
+    margin-left: 220px; /* Adjusted for sidebar */
     padding: 70px;
     background: white;
     flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto; /* Enables scrolling only in the main content */
+    transition: margin-left 0.3s ease-in-out;
 }
 
-/* Stories */
-.stories {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+/* Burger Menu (for mobile) */
+.burger-menu {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
-.story {
-    text-align: center;
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
 }
 
-.story img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    border: 3px solid #e1306c;
-}
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 250px;
+    }
 
-/* Posts */
-.post {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
+    .burger-menu {
+        display: block;
+    }
 
-.post-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-}
+    .main-content {
+        margin-left: 0; /* Full width when sidebar is closed */
+    }
 
-.post img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
+    .sidebar.open {
+        transform: translateX(0);
+    }
 }
