@@ -1,0 +1,28 @@
+<div class="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Texus</h2>
+      <ul>
+        <li><a routerLink="/dashboard" routerLinkActive="active">Home</a></li> 
+        <!-- <li><a routerLink="/search" routerLinkActive="active">Search</a></li> -->
+        <li><a routerLink="/dashboard/explore" routerLinkActive="active">Explore</a></li>
+        <li><a routerLink="/dashboard/reels" routerLinkActive="active">Reels</a></li>
+        <!-- <li><a routerLink="/messages" routerLinkActive="active">Messages <span class="notification">1</span></a></li> -->
+        <!-- <li><a routerLink="/notifications" routerLinkActive="active">Notifications</a></li> -->
+        <li><a routerLink="/dashboardcreate" routerLinkActive="active">Create</a></li>
+        <li><a routerLink="/dashboard/profile" routerLinkActive="active">Profile</a></li>
+        <li><a routerLink="/dashboard/more" routerLinkActive="active">More</a></li>
+        <li><a href="#" (click)="logout()">Logout</a></li> 
+      </ul>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+        
+      <router-outlet></router-outlet>
+      
+    </div>
+  </div>
+  
+  
+  
