@@ -7,8 +7,10 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthserviceService {
-  private apiUrl = 'http://localhost:5000/api/users/register';
-  private apiurl = 'http://localhost:5000/api/users/login';
+  // private apiUrl = 'http://localhost:5000/api/users/register';
+  private apiUrl='https://simpleappbackend-njsq.onrender.com/api/users/register'
+  // private apiurl = 'http://localhost:5000/api/users/login';
+  private apiurl='https://simpleappbackend-njsq.onrender.com/api/users/login'
   constructor(private http: HttpClient,private router: Router) {}
   
   registerUser(userData: any): Observable<any> {
