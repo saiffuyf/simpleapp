@@ -100,19 +100,19 @@ export class AuthserviceService {
   //   return this.http.get(`http://localhost:5001/api/posts/user/${userId}`);
   // }
   addComment(postId: string, commentData: any): Observable<any> {
-    return this.http.post<any>(`http://localhost:5001/api/posts/${postId}/comments`, commentData);
+    return this.http.post<any>(`https://simpleappbackend-2.onrender.com/api/posts/${postId}/comments`, commentData);
   }
   getUserProfile(userId: string): Observable<any> {
-    return this.http.get(`http://localhost:5000/api/users/${userId}`);
+    return this.http.get(`https://simpleappbackend-2.onrender.com/${userId}`);
   }
   updateProfilePic(formData: FormData, userId: string): Observable<any> {
-    return this.http.put(`http://localhost:5000/api/users/${userId}`, formData);
+    return this.http.put(`https://simpleappbackend-2.onrender.com/${userId}`, formData);
   }
   deleteProfilePicture(userId: string): Observable<any> {
-    return this.http.delete(`http://localhost:5000/api/users/${userId}/profile-picture`);
+    return this.http.delete(`https://simpleappbackend-2.onrender.com/api/users/${userId}/profile-picture`);
   }
   getUserPosts(userId: string): Observable<any> {
-    return this.http.get(`http://localhost:5001/api/posts/user/${userId}`);
+    return this.http.get(`https://simpleappbackend-2.onrender.com/api/posts/user/${userId}`);
   }
   
   
