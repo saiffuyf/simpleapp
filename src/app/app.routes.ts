@@ -21,8 +21,8 @@ export const routes: Routes = [
             { path: '', component: HomeComponent },  // Default child route
             { path: 'profile', component: ProfileComponent },
             { path: 'reels', component: ReelsComponent },
-            {path:'create',component:CreateComponent},
-            { path: 'crush-predictor/:targetUserId', component: CrushPredictorComponent,data: { renderMode: 'client' }  },
+            {path:'create',component:CreateComponent}
+            // { path: 'crush-predictor/:targetUserId', component: CrushPredictorComponent },
             
         ]
     },
