@@ -15,7 +15,7 @@ export class AuthserviceService {
   // private profilesection = 'http://localhost:5000/api/users';
   private apiUrl = 'https://simpleappbackend-1.onrender.com/api/users/register';
   private apiurl = 'https://simpleappbackend-1.onrender.com/api/users/login';
-  private baseUrl = 'https://simpleappbackend-1.onrender.com/api/posts';
+  private baseUrl = 'https://simpleappbackend-2.onrender.com/api/posts';
   private profileUrl = 'https://simpleappbackend-1.onrender.com/api/profile';
   private crushUrl = 'https://simpleappbackend-1.onrender.com/predict';
   
