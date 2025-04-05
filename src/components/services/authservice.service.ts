@@ -9,7 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class AuthserviceService {
   private apiUrl = 'http://localhost:5000/api/users/register';
   // private apiUrl='https://simpleappbackend-njsq.onrender.com/api/users/register'
-  private apiurl = 'https://simpleappbackend-1.onrender.com/api/users/login/api/users/login';
+  private apiurl = 'https://simpleappbackend-1.onrender.com/api/users/login';
   private baseUrl = 'http://localhost:5001/api/posts';
   private profileUrl = 'http://localhost:5002/api/profile';
   private crushUrl = 'http://localhost:5006/predict';
