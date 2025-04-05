@@ -116,7 +116,7 @@ export class AuthserviceService {
     return this.http.delete(`https://simpleappbackend-1.onrender.com/api/users/${userId}/profile-picture`);
   }
   getUserPosts(userId: string): Observable<any> {
-    return this.http.get(`https://simpleappbackend-2.onrender.com/api/posts/user/${userId}`);
+    return this.http.get(`https://simpleappbackend-2.onrender.com/api/posts/${userId}`);
   }
   
   

@@ -21,6 +21,33 @@ export class LoginComponent {
     });
   }
 
+  // onSubmit() {
+  //   if (this.loginForm.valid) {
+  //     this.authService.login(this.loginForm.value).subscribe(
+  //       (response: any) => {
+  //         console.log('Login Response:', response); // Debugging
+  
+  //         if (response.token && response.user) {
+  //           localStorage.setItem('token', response.token);
+  //           // localStorage.setItem('userId', response.user.userId);
+  //           localStorage.setItem('userId', response.user.id);
+
+  //           localStorage.setItem('user', JSON.stringify(response.user));
+  
+  //           console.log('Stored User:', localStorage.getItem('user')); // Debugging
+  //           this.router.navigate(['/dashboard']);
+  //         } else {
+  //           this.errorMessage = 'Invalid response from server';
+  //         }
+  //       },
+  //       (error) => {
+  //         console.error('Login error:', error);
+  //         this.errorMessage = error.error?.message || 'Invalid credentials';
+  //       }
+  //     );
+  //   }
+  // }
+
   onSubmit() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(
@@ -29,12 +56,18 @@ export class LoginComponent {
   
           if (response.token && response.user) {
             localStorage.setItem('token', response.token);
-            // localStorage.setItem('userId', response.user.userId);
             localStorage.setItem('userId', response.user.id);
-
-            localStorage.setItem('user', JSON.stringify(response.user));
   
-            console.log('Stored User:', localStorage.getItem('user')); // Debugging
+            // ✅ Store only essential user details to avoid storage quota issues
+            const minimalUser = {
+              id: response.user.id,
+              username: response.user.username,
+              email: response.user.email,
+              profilePic: response.user.profilePicUrl || '' // only if it's a URL
+            };
+            localStorage.setItem('user', JSON.stringify(minimalUser));
+  
+            console.log('Stored Minimal User:', localStorage.getItem('user')); // Debugging
             this.router.navigate(['/dashboard']);
           } else {
             this.errorMessage = 'Invalid response from server';
@@ -47,6 +80,7 @@ export class LoginComponent {
       );
     }
   }
+  
 
 
 }
