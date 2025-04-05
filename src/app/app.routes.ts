@@ -22,7 +22,7 @@ export const routes: Routes = [
             { path: 'profile', component: ProfileComponent },
             { path: 'reels', component: ReelsComponent },
             {path:'create',component:CreateComponent},
-            { path: 'crush-predictor/:targetUserId', component: CrushPredictorComponent },
+            { path: 'crush-predictor/:targetUserId', component: CrushPredictorComponent,data: { renderMode: 'default' }  },
             
         ]
     },
