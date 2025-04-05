@@ -4,13 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "build:ssr": "node node_modules/@angular/cli/bin/ng build --configuration production && node node_modules/@angular/cli/bin/ng run my-angular-app:server:production",
-    "serve:ssr": "node dist/my-angular-app/server/server.mjs",
-    "serve:ssr:my-angular-app": "node dist/my-angular-app/server/server.mjs"
-  },
+    "test": "ng test"
+    },
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.0.0",
