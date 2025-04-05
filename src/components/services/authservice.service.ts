@@ -103,13 +103,17 @@ export class AuthserviceService {
     return this.http.post<any>(`https://simpleappbackend-2.onrender.com/api/posts/${postId}/comments`, commentData);
   }
   getUserProfile(userId: string): Observable<any> {
-    return this.http.get(`https://simpleappbackend-2.onrender.com/${userId}`);
+    return this.http.get(`https://simpleappbackend-1.onrender.com/api/users/${userId}`);
   }
+  // updateProfilePic(formData: FormData, userId: string): Observable<any> {
+  //   return this.http.put(`https://simpleappbackend-2.onrender.com/${userId}`, formData);
+  // }
   updateProfilePic(formData: FormData, userId: string): Observable<any> {
-    return this.http.put(`https://simpleappbackend-2.onrender.com/${userId}`, formData);
+    return this.http.put(`https://simpleappbackend-1.onrender.com/api/users/${userId}`, formData);
   }
+  
   deleteProfilePicture(userId: string): Observable<any> {
-    return this.http.delete(`https://simpleappbackend-2.onrender.com/api/users/${userId}/profile-picture`);
+    return this.http.delete(`https://simpleappbackend-1.onrender.com/api/users/${userId}/profile-picture`);
   }
   getUserPosts(userId: string): Observable<any> {
     return this.http.get(`https://simpleappbackend-2.onrender.com/api/posts/user/${userId}`);
