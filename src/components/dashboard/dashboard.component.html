@@ -1,26 +1,26 @@
 <div class="dashboard">
-  <!-- Burger Menu Button (Visible on Mobile) -->
   <div class="burger-menu" (click)="toggleSidebar()">
       <span></span>
       <span></span>
       <span></span>
   </div>
 
-  <!-- Sidebar -->
-  <div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+ <div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
       <h2>Texus</h2>
       <ul>
           <li><a routerLink="/dashboard" routerLinkActive="active"><fa-icon [icon]="faHome"></fa-icon> Home</a></li>
           <li><a routerLink="/dashboard/explore" routerLinkActive="active"><fa-icon [icon]="faExplore"></fa-icon> Explore</a></li>
           <li><a routerLink="/dashboard/reels" routerLinkActive="active"><fa-icon [icon]="faReels"></fa-icon> Reels</a></li>
-          <li><a routerLink="/dashboardcreate" routerLinkActive="active"><fa-icon [icon]="faCreate"></fa-icon> Create</a></li>
+          <li><a routerLink="/dashboard/create" routerLinkActive="active"><fa-icon [icon]="faCreate"></fa-icon> Create</a></li>
           <li><a routerLink="/dashboard/profile" routerLinkActive="active"><fa-icon [icon]="faProfile"></fa-icon> Profile</a></li>
-          <!-- <li><a routerLink="/dashboard/more" routerLinkActive="active"><fa-icon [icon]="faMore"></fa-icon> More</a></li> -->
+          <li><a [routerLink]="['/dashboard/crush-predictor', targetUserId]" routerLinkActive="active">
+            AI Crush Predictor
+          </a></li>
+          
           <li><a href="#" (click)="logout()"><fa-icon [icon]="faEllipsisH"></fa-icon> Logout</a></li>
       </ul>
   </div>
 
-  <!-- Main Content (Scrollable) -->
   <div class="main-content">
       <router-outlet></router-outlet>
   </div>

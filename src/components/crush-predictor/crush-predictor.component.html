@@ -1,0 +1,30 @@
+<div class="predictor-container">
+  <h2>💘 AI Crush Predictor</h2>
+  <p>Based on your real interactions</p>
+
+  <!-- Show auto-calculated interaction data -->
+  <div class="interaction-info">
+    <p>❤️ Likes given: {{ likes }}</p>
+    <p>💬 Comments: {{ comments }}</p>
+    <p>📩 DMs Sent: {{ dms }}</p>
+    <p>⚡ Avg. Response Time: {{ responseTime }} sec</p>
+  </div>
+
+  <button (click)="getCrushPrediction()" [disabled]="loading">
+    {{ loading ? 'Analyzing...' : '🔍 Predict Crush' }}
+  </button>
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="prediction" class="result">
+    <h3>🎉 Your Secret Admirer:</h3>
+    <p>{{ prediction.username }}</p>
+    <img
+      [src]="prediction.profilePicture || 'assets/default-profile.png'"
+      class="profile-pic"
+      alt="Admirer"
+    />
+  </div>
+</div>

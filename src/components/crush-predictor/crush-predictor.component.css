@@ -1,0 +1,83 @@
+.predictor-container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: #fff5f8;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .predictor-container h2 {
+    color: #e91e63;
+    font-size: 26px;
+    margin-bottom: 5px;
+  }
+  
+  .predictor-container p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .interaction-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #ffe2ec;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: left;
+  }
+  
+  .interaction-info p {
+    margin: 8px 0;
+  }
+  
+  button {
+    background-color: #e91e63;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #d81b60;
+  }
+  
+  button:disabled {
+    background-color: #f8bcd0;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    margin-top: 15px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .result {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #fce4ec;
+    border-radius: 10px;
+  }
+  
+  .result h3 {
+    color: #c2185b;
+    margin-bottom: 10px;
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  

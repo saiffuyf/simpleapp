@@ -1,0 +1,322 @@
+/* Post Container
+.post-container {
+    width: 100%;
+    max-width: 500px; 
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', Arial, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid #ff385c;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.more-options {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.more-options:hover {
+    color: #ff385c;
+}
+
+
+.post-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    background-color: #f1f1f1;
+}
+
+
+.post-footer {
+    padding: 10px 15px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.actions .icons {
+    display: flex;
+    gap: 16px;
+}
+
+.actions .icons i {
+    font-size: 22px;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.actions .icons i:hover {
+    color: #ff385c;
+}
+
+
+.likes {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 8px;
+    color: #333;
+}
+
+.caption {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+
+.timestamp {
+    font-size: 12px;
+    color: #888;
+    padding: 4px 8px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .post-container {
+        max-width: 90%;
+        margin-top: 10px;
+    }
+
+    .post-image {
+        max-height: 280px;
+    }
+
+    .post-header {
+        padding: 10px 12px;
+    }
+
+    .actions .icons i {
+        font-size: 20px;
+    }
+}
+.comment {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .add-comment {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  
+  .comment-input {
+    flex: 1;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+   */
+/* 📦 Post Container - Small & Compact */
+.post-container {
+    width: 100%;
+    max-width: 400px; /* smaller container */
+    margin: 12px auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* 👤 Post Header */
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+  }
+  
+  .username {
+    font-weight: 600;
+    font-size: 13px;
+    color: #333;
+  }
+  
+  /* 🖼️ Post Image - Fully Fit */
+  .post-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    background: #fafafa;
+  }
+  
+  /* 📝 Caption */
+  .caption {
+    padding: 6px 10px;
+    font-size: 13px;
+    color: #444;
+  }
+  
+  /* 💬 Comments */
+  .comments-section {
+    padding: 0 10px 8px;
+    font-size: 13px;
+    color: #333;
+  }
+  
+  .comment {
+    margin-bottom: 3px;
+  }
+  
+  .comment strong {
+    color: #111;
+  }
+  
+  .view-more-comments {
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 3px 0;
+    user-select: none;
+  }
+  
+  .view-more-comments:hover {
+    color: #ff385c;
+  }
+  
+  /* ➕ Add Comment */
+  .add-comment {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  
+  .comment-input {
+    flex: 1;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 12.5px;
+  }
+  
+  .add-comment button {
+    padding: 5px 10px;
+    background: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 12.5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .add-comment button:hover {
+    background: #007bc1;
+  }
+  
+  /* 🔻 Footer: Like | Predict | Time */
+  .post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+  }
+  
+  .like-button,
+  .predict-button {
+    background: none;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .like-button:hover,
+  .predict-button:hover {
+    color: #e91e63;
+  }
+  
+  .timestamp {
+    font-size: 11px;
+    color: #999;
+  }
+  
+  /* 📱 Mobile Friendly */
+  @media screen and (max-width: 420px) {
+    .post-container {
+      margin: 8px;
+      border-radius: 6px;
+    }
+  
+    .post-header,
+    .caption,
+    .comments-section,
+    .post-footer {
+      padding: 6px;
+    }
+  
+    .profile-pic {
+      width: 28px;
+      height: 28px;
+    }
+  
+    .username,
+    .caption,
+    .comment,
+    .like-button,
+    .predict-button {
+      font-size: 12.5px;
+    }
+  
+    .comment-input {
+      font-size: 12px;
+    }
+  
+    .timestamp {
+      font-size: 10px;
+    }
+  }
+  

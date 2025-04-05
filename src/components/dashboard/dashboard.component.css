@@ -6,27 +6,29 @@
     display: flex;
     height: 100vh;
     font-family: 'Inter', sans-serif;
-    overflow: hidden; /* Prevents full-page scrolling */
+    overflow: hidden;
+    background-color: #f9f9f9;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 200px;
-    padding: 20px;
-    background: black;
-    border-right: 1px solid #ddd;
+    width: 250px;
+    padding: 25px 20px;
+    background: #121212;
     position: fixed;
     height: 100vh;
-    overflow-y: auto; /* Sidebar stays fixed */
+    overflow-y: auto;
     transition: transform 0.3s ease-in-out;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Sidebar - Title */
 .sidebar h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 25px;
     font-family: 'Billabong', sans-serif;
     color: white;
+    text-align: center;
 }
 
 /* Sidebar - List */
@@ -36,25 +38,29 @@
 }
 
 .sidebar li {
-    margin: 30px 0;
+    margin: 15px 0;
 }
+
 .sidebar a {
     text-decoration: none;
     color: white;
     display: flex;
     align-items: center;
     font-size: 18px;
-    font-weight: 400;
-    transition: 0.3s ease-in-out;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
 }
 
-/* 🛠 Add spacing between icons and text */
+/* Sidebar Icons */
 .sidebar a fa-icon {
-    margin-right: 12px; /* Adjust as needed */
-    font-size: 20px; /* Ensure icons are properly sized */
+    margin-right: 12px;
+    font-size: 20px;
 }
 
-.sidebar a:hover, .sidebar a.active {
+.sidebar a:hover, 
+.sidebar a.active {
+    background: rgba(255, 255, 255, 0.1);
     font-weight: 600;
 }
 
@@ -63,29 +69,29 @@
     background: red;
     color: white;
     font-size: 12px;
-    padding: 2px 6px;
+    padding: 3px 7px;
     border-radius: 50%;
     margin-left: 10px;
 }
 
-/* Main Content (Scrollable) */
+/* Main Content */
 .main-content {
-    margin-left: 220px; /* Adjusted for sidebar */
-    padding: 70px;
-    background: white;
+    margin-left: 260px;
+    padding: 50px;
     flex-grow: 1;
+    background: white;
     height: 100vh;
-    overflow-y: auto; /* Enables scrolling only in the main content */
+    overflow-y: auto;
     transition: margin-left 0.3s ease-in-out;
 }
 
-/* Burger Menu (for mobile) */
+/* Burger Menu (Mobile) */
 .burger-menu {
     display: none;
     position: fixed;
     top: 15px;
     left: 15px;
-    background: black;
+    background: #121212;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -95,13 +101,14 @@
 
 .burger-menu span {
     display: block;
-    width: 25px;
+    width: 30px;
     height: 3px;
     background: white;
-    margin: 5px 0;
+    margin: 6px 0;
+    transition: 0.3s;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
@@ -113,7 +120,7 @@
     }
 
     .main-content {
-        margin-left: 0; /* Full width when sidebar is closed */
+        margin-left: 0;
     }
 
     .sidebar.open {

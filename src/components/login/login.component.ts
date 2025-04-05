@@ -25,14 +25,28 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(
         (response: any) => {
-          localStorage.setItem('token', response.token);
-          this.router.navigate(['/dashboard']);
+          console.log('Login Response:', response); // Debugging
+  
+          if (response.token && response.user) {
+            localStorage.setItem('token', response.token);
+            // localStorage.setItem('userId', response.user.userId);
+            localStorage.setItem('userId', response.user.id);
+
+            localStorage.setItem('user', JSON.stringify(response.user));
+  
+            console.log('Stored User:', localStorage.getItem('user')); // Debugging
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.errorMessage = 'Invalid response from server';
+          }
         },
         (error) => {
-          this.errorMessage = error.error.message || 'Invalid credentials';
+          console.error('Login error:', error);
+          this.errorMessage = error.error?.message || 'Invalid credentials';
         }
       );
     }
   }
+
 
 }

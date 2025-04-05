@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { AuthserviceService } from '../services/authservice.service';
@@ -11,8 +11,18 @@ import { faHome, faEllipsisH,faCompass, faVideo, faPlusSquare, faUser, faEllipsi
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
+  targetUserId: string = '';
   constructor(private authService: AuthserviceService) {}
+
+  ngOnInit(): void {
+    const storedUserId = localStorage.getItem('userId');
+    if (storedUserId) {
+      this.targetUserId = storedUserId;
+    } else {
+      console.warn('No userId found in localStorage');
+    }
+  }
   logout() {
     this.authService.logout();  // Call the logout function
   }

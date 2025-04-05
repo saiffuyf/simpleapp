@@ -1,1 +1,6 @@
-<p>create works!</p>
+<div class="create-post-container">
+  <h2>Create a New Post</h2>
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+  <input type="text" [(ngModel)]="caption" placeholder="Enter caption..." />
+  <button (click)="createPost()">Post</button>
+</div>

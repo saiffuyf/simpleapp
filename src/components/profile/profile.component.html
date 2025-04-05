@@ -1,1 +1,32 @@
-<p>profile works!</p>
+   <div class="profile-container">
+    <h2>👤 {{ username }}</h2>
+  
+    <div class="profile-picture">
+      <img *ngIf="profilePicture && profilePicture !== 'undefined'; else noPic" 
+           [src]="profilePicture" 
+           alt="Profile Picture" 
+           class="profile-img"/>
+      <ng-template #noPic>
+        <p>No profile picture uploaded.</p>
+      </ng-template>
+    </div>
+  
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="updateProfilePic()" [disabled]="!selectedFile">Upload</button>
+    <button (click)="deleteProfilePic()" 
+            [disabled]="!profilePicture || profilePicture === 'undefined'">Delete Picture</button>
+  
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  
+    <hr />
+  
+    <h3>Your Posts</h3>
+    <div class="posts-grid">
+      <div class="post" *ngFor="let post of posts">
+        <img [src]="post.imageUrl" alt="Post Image" class="post-img"/>
+        <p>{{ post.caption }}</p>
+      </div>
+    </div>
+  </div>
+  

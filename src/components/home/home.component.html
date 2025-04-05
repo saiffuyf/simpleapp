@@ -1,1 +1,128 @@
-<p>home works!</p>
+<!-- <div *ngFor="let post of posts; let i = index" class="post-container">
+    <div class="post-header">
+      <img [src]="post.profilePicture || 'assets/default-profile.png'" class="profile-pic" />
+      <span class="username">{{ post.username }}</span>
+    </div>
+    <img [src]="post.imageUrl" class="post-image" />
+    <p class="caption">{{ post.caption }}</p>
+
+    <div class="post-footer">
+        <button (click)="toggleLike(post, i)" class="like-button">
+            {{ isLiked(post) ? '❤️' : '🤍' }} {{ post.likes.length }} Likes
+        </button>
+        <button (click)="predictCrushFromPost(post.userId)" class="predict-button">
+          🔮 Predict Crush
+        </button>
+
+          
+      <span class="timestamp">{{ post.createdAt | date:'short' }}</span>
+    </div>
+</div> -->
+
+
+
+
+<!-- <div *ngFor="let post of posts; let i = index" class="post-container">
+  <div class="post-header">
+    <img [src]="post.profilePicture || 'assets/default-profile.png'" class="profile-pic" />
+    <span class="username">{{ post.username }}</span>
+  </div>
+
+  <img [src]="post.imageUrl" class="post-image" />
+  <p class="caption">{{ post.caption }}</p>
+
+  <div class="comments-section">
+    <div *ngFor="let comment of post.comments" class="comment">
+      <strong>{{ comment.username }}</strong>: {{ comment.text }}
+    </div>
+
+    <div class="add-comment">
+      <input
+        [(ngModel)]="post.newComment"
+        placeholder="Add a comment..."
+        class="comment-input"
+        (keydown.enter)="addComment(post, i)"
+      />
+      <button (click)="addComment(post, i)">Post</button>
+    </div>
+  </div>
+
+  
+  <div class="post-footer">
+    <button (click)="toggleLike(post, i)" class="like-button">
+      {{ isLiked(post) ? '❤️' : '🤍' }} {{ post.likes.length }} Likes
+    </button>
+
+    <button (click)="predictCrushFromPost(post.userId)" class="predict-button">
+      🔮 Predict Crush
+    </button>
+
+    <span class="timestamp">{{ post.createdAt | date: 'short' }}</span>
+  </div>
+</div>
+ -->
+
+ <div *ngFor="let post of posts; let i = index" class="post-container">
+  <!-- 🧑‍🤝‍🧑 POST HEADER -->
+  <div class="post-header">
+    <img [src]="post.profilePicture || 'assets/default-profile.png'" class="profile-pic" />
+    <span class="username">{{ post.username }}</span>
+  </div>
+
+  <!-- 🖼️ POST IMAGE -->
+  <img [src]="post.imageUrl" class="post-image" />
+  <p class="caption">{{ post.caption }}</p>
+
+  <!-- 💬 COMMENTS SECTION -->
+  <div class="comments-section">
+    <!-- Show only 2 latest comments unless expanded -->
+    <div
+      *ngFor="let comment of post.showAllComments ? post.comments : post.comments.slice(-2)"
+      class="comment"
+    >
+      <strong>{{ comment.username }}</strong>: {{ comment.text }}
+    </div>
+
+    <!-- View all comments button -->
+    <div
+      *ngIf="post.comments.length > 2 && !post.showAllComments"
+      class="view-more-comments"
+      (click)="post.showAllComments = true"
+    >
+      View all {{ post.comments.length }} comments
+    </div>
+
+    <!-- Hide comments button (optional) -->
+    <div
+      *ngIf="post.showAllComments && post.comments.length > 2"
+      class="view-more-comments"
+      (click)="post.showAllComments = false"
+    >
+      Hide comments
+    </div>
+
+    <!-- Add comment input -->
+    <div class="add-comment">
+      <input
+        [(ngModel)]="post.newComment"
+        placeholder="Add a comment..."
+        class="comment-input"
+        (keydown.enter)="addComment(post, i)"
+      />
+      <button (click)="addComment(post, i)">Post</button>
+    </div>
+  </div>
+
+  <!-- ❤️ LIKES + 🔮 CRUSH + 🕒 TIMESTAMP -->
+  <div class="post-footer">
+    <button (click)="toggleLike(post, i)" class="like-button">
+      {{ isLiked(post) ? '❤️' : '🤍' }} {{ post.likes.length }} Likes
+    </button>
+
+    <button (click)="predictCrushFromPost(post.userId)" class="predict-button">
+      🔮 Predict Crush
+    </button>
+
+    <span class="timestamp">{{ post.createdAt | date: 'short' }}</span>
+  </div>
+</div>
